@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.muzzmatch.interview.ui.viewmodels.ChatMessageViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- explicitly set width for edit text for animations without animations would be 0dp for better adjusting to screen sizes -->
+        <EditText
+            android:id="@+id/chat_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/grey_rounded_rectangle_background"
+            android:hint="@string/text_input_hint"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:chatTextInput="@{chatEnterButton}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chat_enter_button"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/chat_enter_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:background="@drawable/red_gradient_background"
+            android:clickable="true"
+            android:onClick="@{(v) -> viewModel.onSubmitButtonClicked(chatEditText.getText().toString())}"
+            android:src="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chat_edit_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

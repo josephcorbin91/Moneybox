@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Muzzmatch</string>
+
+    <!-- Menu -->
+    <string name="more_menu_title">More</string>
+    <string name="text_input_hint">It\'s a muzmatch !!</string>
+
+
+</resources>

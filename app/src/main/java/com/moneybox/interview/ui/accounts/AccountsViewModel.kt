@@ -36,9 +36,8 @@ class AccountsViewModel @ViewModelInject constructor(
             getInvestorProducts()
         }
     }
-
-
     suspend fun getInvestorProducts() {
+        _investorProductResponse.postValue(Resource.loading())
         try {
             sharedPreferences.getString(BEARER_TOKEN_KEY, "")?.let { bearerToken ->
                 val investorProductResponse = productsService.getProducts(bearerToken)

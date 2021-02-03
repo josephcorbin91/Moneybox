@@ -9,6 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.moneybox.interview.R
@@ -16,6 +17,7 @@ import com.moneybox.interview.adapter.AccountsAdapter
 import com.moneybox.interview.databinding.AccountsFragmentBinding
 import com.moneybox.interview.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 /**
  * Fragment enabling a user view posts that are retrieved from remote/local data source.
@@ -79,14 +81,14 @@ class AccountsFragment : Fragment() {
         viewModel.investorProductResponse.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Resource.Status.ERROR   -> {
-                    binding.progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.INVISIBLE
                     Toast.makeText(requireView().context, it.message, Toast.LENGTH_LONG).show()
                 }
                 Resource.Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
                 Resource.Status.SUCCESS -> {
-                    binding.progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.INVISIBLE
                     binding.accountsRv.visibility = View.VISIBLE
                     binding.userAccountsTotalPlanValue.text = getString(R.string.user_accounts_total_plan_value, it.data?.body()?.totalPlanValue)
                 }

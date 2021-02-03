@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.moneybox.interview.R
 import com.moneybox.interview.databinding.AccountDetailFragmentBinding
+import com.moneybox.interview.databinding.AccountsFragmentBinding
 import com.moneybox.interview.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,13 +26,14 @@ class AccountDetailFragment : Fragment() {
     private val args: AccountDetailFragmentArgs by navArgs()
 
     private val accountDetailViewModel: AccountDetailViewModel by viewModels()
+    private lateinit var binding: AccountDetailFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = DataBindingUtil.inflate<AccountDetailFragmentBinding>(
+        binding = DataBindingUtil.inflate<AccountDetailFragmentBinding>(
                 inflater,
                 R.layout.account_detail_fragment,
                 container,
@@ -50,12 +52,14 @@ class AccountDetailFragment : Fragment() {
             it?.let { resource ->
                 when (resource.status) {
                     Resource.Status.SUCCESS -> {
-
+                        binding.progressBar.visibility = View.INVISIBLE
                     }
                     Resource.Status.ERROR   -> {
+                        binding.progressBar.visibility = View.INVISIBLE
                         Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
                     }
                     Resource.Status.LOADING -> {
+                        binding.progressBar.visibility = View.VISIBLE
                     }
                     else                    -> {
                     }

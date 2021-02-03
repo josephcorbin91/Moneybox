@@ -99,7 +99,8 @@ class  AccountViewModelTest {
         // Then
         val investorProductResponseSlots = mutableListOf<Resource<Response<InvestorProduct>>>()
         verify { mockedObserver.onChanged(capture(investorProductResponseSlots)) }
-        assert(investorProductResponseSlots[0].status == Resource.Status.SUCCESS)
+        assert(investorProductResponseSlots[1].status == Resource.Status.LOADING)
+        assert(investorProductResponseSlots[2].status == Resource.Status.SUCCESS)
     }
 
     private fun createInvestorProductObserver(): Observer<Resource<Response<InvestorProduct>>> =

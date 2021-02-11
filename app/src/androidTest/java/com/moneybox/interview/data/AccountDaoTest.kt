@@ -37,7 +37,6 @@ class AccountDaoTest {
         database = Room.inMemoryDatabaseBuilder(context, AppDatabase::class.java).build()
         accountDao = database.accountDao()
 
-        // Insert plants in non-alphabetical order to test that results are sorted by name
         accountDao.insertAll(listOf(accountA, accountB, accountC))
     }
 
@@ -46,11 +45,11 @@ class AccountDaoTest {
     }
 
     @Test fun testGetAccounts() = runBlocking {
-        val plantList = getValue(accountDao.getAllAccounts())
-        assertThat(plantList.size, equalTo(3))
-        assertThat(plantList[0], equalTo(accountA))
-        assertThat(plantList[1], equalTo(accountB))
-        assertThat(plantList[2], equalTo(accountC))
+        val accountList = getValue(accountDao.getAllAccounts())
+        assertThat(accountList.size, equalTo(3))
+        assertThat(accountList[0], equalTo(accountA))
+        assertThat(accountList[1], equalTo(accountB))
+        assertThat(accountList[2], equalTo(accountC))
     }
 
     @Test
@@ -64,7 +63,7 @@ class AccountDaoTest {
         assertThat(accountA.moneyBox, equalTo(1.0))
         accountA.moneyBox = 30.0
         accountDao.updateAccounts(accountA)
-        val retreivedAccountA = getValue(accountDao.getAccount(1L))
-        assertThat(retreivedAccountA.moneyBox, equalTo(30.0))
+        val retrievedAccountA = getValue(accountDao.getAccount(1L))
+        assertThat(retrievedAccountA.moneyBox, equalTo(30.0))
     }
 }

@@ -8,7 +8,6 @@ import com.moneybox.interview.R
 import com.moneybox.interview.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

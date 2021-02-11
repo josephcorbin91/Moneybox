@@ -9,7 +9,7 @@
     <string name="individual_account_title">Individual Account</string>
     <string name="add_ten_button">Add £10</string>
     <string name="user_accounts_hello_title">Hello %1$s !</string>
-    <string name="user_accounts_total_plan_value">Total Plan Value: %1$f !</string>
+    <string name="user_accounts_total_plan_value">Total Plan Value: £%1$s</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="email_address_error">Please enter a correct email address</string>

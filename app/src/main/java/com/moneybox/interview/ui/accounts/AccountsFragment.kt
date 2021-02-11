@@ -90,7 +90,10 @@ class AccountsFragment : Fragment() {
                 Resource.Status.SUCCESS -> {
                     binding.progressBar.visibility = View.INVISIBLE
                     binding.accountsRv.visibility = View.VISIBLE
-                    binding.userAccountsTotalPlanValue.text = getString(R.string.user_accounts_total_plan_value, it.data?.body()?.totalPlanValue)
+                    it.data?.body()?.totalPlanValue?.let {
+                        val totalPlanValueFormatted = "%.2f".format(it)
+                        binding.userAccountsTotalPlanValue.text = getString(R.string.user_accounts_total_plan_value, totalPlanValueFormatted)
+                    }
                 }
                 else -> {
                 }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="chatMessageUIModel"
+            type="com.muzzmatch.interview.data.entities.UiModel.ChatMessageUIItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timestamp_item"
+            style="@style/TimeStampTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            app:chatMessageTimeStamp="@{chatMessageUIModel}" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <FrameLayout
+                android:id="@+id/chatLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_sender_drawable_tail"
+                android:maxWidth="200dp"
+                android:minHeight="40dp"
+                app:chatMessageFrameLayout="@{chatMessageUIModel}">
+
+                <TextView
+                    android:id="@+id/chatMessage_text"
+                    style="@style/ChatTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:maxWidth="250dp"
+                    android:minHeight="40dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="5dp"
+                    android:text="Does 7pm work for you? I’ve got to go pick up my little brother first from a party me"
+                    app:chatMessageTextView="@{chatMessageUIModel.chatMessage}" />
+
+                <ImageView
+                    android:id="@+id/chatMessage_read_receipts"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="5dp"
+                    app:chatMessageReadReceipts="@{chatMessageUIModel.chatMessage}" />
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

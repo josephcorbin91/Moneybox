@@ -5,7 +5,14 @@
     <color name="colorAccent">#49bfbd</color>
     <color name="white">#ffffff</color>
     <color name="light_grey">#dde0e2</color>
-    <color name="text_button_primary">@color/white</color>
-    <color name="button_background">#00c2b5</color>
     <color name="aqua_50">#7F00c2b5</color>
+    <color name="pink">#fe2878</color>
+    <color name="grey">#f1f5fb</color>
+    <color name="start_gradient">#fc6266</color>
+    <color name="end_gradient">#fd2874</color>
+    <color name="dark_grey">#c6ccd3</color>
+    <color name="black">#000000</color>
+    <color name="darker_gray">#99a7b3</color>
+    <color name="gold">#ffa839</color>
+
 </resources>

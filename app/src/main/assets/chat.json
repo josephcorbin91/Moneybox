@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "isMe": false,
+    "message": "Wowsa sounds fun",
+    "date": "2021-05-10T15:00:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "2",
+    "isMe": false,
+    "message": "Yeh for sure that works. What time do you think?",
+    "date": "2021-05-13T15:00:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "3",
+    "isMe": true,
+    "message": "Does 7pm work for you? I’ve got to go pick up my little brother first from a party me",
+    "date": "2021-05-13T15:01:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "4",
+    "isMe": false,
+    "message": "Ok cool!",
+    "date": "2021-05-13T15:02:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "5",
+    "isMe": true,
+    "message": "What are you up to today?",
+    "date": "2021-05-13T15:03:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "6",
+    "isMe": false,
+    "message": "Nothing much",
+    "date": "2021-05-13T15:04:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "7",
+    "isMe": false,
+    "message": "Actually just about to go shopping, got any recommendations for a good shoe shop? I’m a fashion disaster",
+    "date": "2021-05-13T15:05:00.00Z",
+    "userName": "Sarah"
+  },
+  {
+    "id": "8",
+    "isMe": false,
+    "message": "The last one went on for hours",
+    "date": "2021-05-13T15:06:00.00Z",
+    "userName": "Sarah"
+  }
+]

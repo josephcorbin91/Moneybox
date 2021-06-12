@@ -2,39 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/chatMessageFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.moneybox.interview.ui.login.LoginFragment"
+        android:id="@+id/chatMessageFragment"
+        android:name="com.muzzmatch.interview.ui.fragments.ChatMessageFragment"
         android:label="Login"
-        tools:layout="@layout/login_fragment" >
-        <action
-            android:id="@+id/action_loginFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.moneybox.interview.ui.accounts.AccountsFragment"
-        tools:layout="@layout/accounts_fragment" >
-        <action
-            android:id="@+id/action_accountFragment_to_accountDetailFragment"
-            app:destination="@id/accountDetailsFragment"/>
-
-        <argument
-            android:name="name"
-            app:argType="string" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/accountDetailsFragment"
-        android:name="com.moneybox.interview.ui.accountdetail.AccountDetailFragment"
-        tools:layout="@layout/account_detail_fragment" >
-
-        <argument
-            android:name="productId"
-            app:argType="long" />
-    </fragment>
+        tools:layout="@layout/chat_message_fragment"></fragment>
 </navigation>
